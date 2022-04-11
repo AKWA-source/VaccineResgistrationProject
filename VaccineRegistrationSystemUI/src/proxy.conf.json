@@ -1,0 +1,9 @@
+{
+    "/api/*": {
+        "target": "https://vaccinedemoregistration.herokuapp.com//Project/REST-API",
+        "pathRewrite": { "^/api": "" },
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

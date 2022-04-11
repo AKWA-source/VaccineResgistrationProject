@@ -1,0 +1,56 @@
+<div><br>
+<div class="text-center">
+    <h3 style="color:whitesmoke;text-align:center;font-size: 25px;padding-right: 40px;">Welcome to Admin page!!</h3>
+    
+    <form [formGroup]="uploadForm" (ngSubmit)="onFormSubmit()" class="col-md-12" >
+        
+        <div class="form-group">
+            <label class="preview" for="vaccinename"><b>Name of the Vaccine</b></label>
+            <input type="text" formControlName="vaccinename" class="form-control input" [ngClass]="{ 'is-invalid': submitted && fval.vaccinename.errors }" placeholder="Enter Name of the Vaccine here"/>
+            <div *ngIf="submitted && fval.vaccinename.errors" class="invalid-feedback">
+                <div class="preview-req" *ngIf="fval.vaccinename.errors.required">Name of the Vaccine is required</div>
+            </div><br>
+        </div>
+        <div class="form-group">
+            <label class="preview" for="doses"><b>Doses of Vaccine</b></label>
+            <input type="text" formControlName="doses" class="form-control input" [ngClass]="{ 'is-invalid': submitted && fval.doses.errors }" placeholder="Enter Doses here"/>
+            <div *ngIf="submitted && fval.doses.errors" class="invalid-feedback">
+                <div class="preview-req" *ngIf="fval.doses.errors.required">Doses of Vaccine is required</div>
+            </div><br>
+        </div>
+        <div class="form-group">
+            <label class="preview" for="vaccinetype"><b>Type of Vaccine</b></label>
+            <input type="text" formControlName="vaccinetype" class="form-control input" [ngClass]="{ 'is-invalid': submitted && fval.vaccinetype.errors }" placeholder="Enter Type of Vaccine here" />
+            <div class="preview-req" *ngIf="submitted && fval.vaccinetype.errors" class="invalid-feedback">
+                <div class="preview-req" *ngIf="fval.vaccinetype.errors.required">Type of Vaccine is required</div>
+            </div><br>
+        </div>
+        <div class="form-group">
+            <label class="preview" for="dateofpurchase"><b>Date of Purchase</b></label>
+            <input type="text" formControlName="dateofpurchase" class="form-control input" [ngClass]="{ 'is-invalid': submitted && fval.dateofpurchase.errors }" placeholder="Enter Type of Vaccine here" />
+            <div class="preview-req" *ngIf="submitted && fval.dateofpurchase.errors" class="invalid-feedback">
+                <div class="preview-req" *ngIf="fval.dateofpurchase.errors.required">Date of Purchase is required</div>
+            </div><br>
+        </div>
+        <div class="form-group">
+            <label class="preview" for="content"><b>Description of the Vaccine</b></label>
+            <input type="text" formControlName="content" class="form-control input" [ngClass]="{ 'is-invalid': submitted && fval.content.errors }" placeholder="Enter Description of the Vaccine here" />
+            <div class="preview-req" *ngIf="submitted && fval.content.errors" class="invalid-feedback">
+                <div class="preview-req" *ngIf="fval.content.errors.required">Description of the Vaccine is required</div>
+            </div><br>
+        </div>
+        <div style="padding-left: 600px;">
+            <button (click)="onUpload()"  
+            class="btn btn-success">
+            Update
+        </button>
+      </div>
+      <div style="padding-top: 50px;padding-left: 600px;">
+        <button class="btn" routerLink="/adminhome" routerLinkActive="active">Go to Home Page</button>
+    </div>
+    </form>
+
+</div>
+
+
+</div>

@@ -1,0 +1,37 @@
+     .books {
+      margin: 2 2 2 2;
+      width: 25%;
+      height: 4.5em;
+      background-color: #008CBA;
+      border-radius: 15px;
+      left: .1em;
+      padding: 0.3em 0.3em 0.3em 0.3em;
+    }
+    .preview{
+      color: white;
+      font-size: 20px;
+      padding-left: 50px;
+    }
+    .preview-req{
+      color: red;width:100%;font-size: 20px;padding-left: 550px;font-weight: bold;
+    }
+  
+    .btn{
+      color: white;width:50;font-size: 20px;align-items: center;justify-content: center;margin: 5px;
+    }
+
+    button {
+      background-color: #008CBA;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 300px;
+      float: center;
+    }
+  
+    button:hover {
+      opacity: 0.8;
+    }
+    

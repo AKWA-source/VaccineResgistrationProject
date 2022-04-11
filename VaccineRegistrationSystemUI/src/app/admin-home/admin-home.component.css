@@ -1,0 +1,36 @@
+button {
+  background-color: #008CBA;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 300px;
+  float: center;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.btn{
+  color: white;width:50;font-size: 20px;align-items: center;justify-content: center;
+}
+
+mat-grid-tile {
+background-color: #008CBA;
+color: white;
+width:25%;
+padding: 10px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+box-sizing: border-box;
+display: flex;
+cursor: pointer;
+font-size: 20px;
+}
+mat-grid-tile:hover{
+opacity:0.8;
+}
+

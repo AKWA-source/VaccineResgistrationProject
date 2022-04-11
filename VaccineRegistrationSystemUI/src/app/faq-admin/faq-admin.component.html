@@ -1,0 +1,35 @@
+<div><br>
+    <div class="text-center">
+        <h3 style="color:whitesmoke;text-align:center;font-size: 25px;padding-right: 40px;">Update FAQs!</h3>
+        
+        <form [formGroup]="faqForm" (ngSubmit)="onFormSubmit()" class="col-md-12" >
+            
+            <div class="form-group">
+                <label class="preview" style="padding-left: 500px;" for="question"><b>Question </b></label>
+                <input type="text" formControlName="question" class="form-control input" [ngClass]="{ 'is-invalid': submitted && fval.question.errors }" placeholder="Enter Question here"/>
+                <div *ngIf="submitted && fval.question.errors" class="invalid-feedback">
+                    <div class="preview-req" *ngIf="fval.question.errors.required">Question is required</div>
+                </div><br>
+            </div>
+            <div class="form-group">
+                <label class="preview" style="padding-left: 510px;" for="answer"><b>Answer </b></label>
+                <input type="text" formControlName="answer" class="form-control input" [ngClass]="{ 'is-invalid': submitted && fval.answer.errors }" placeholder="Enter Answer here"/>
+                <div *ngIf="submitted && fval.answer.errors" class="invalid-feedback">
+                    <div class="preview-req" *ngIf="fval.answer.errors.required">Answer is required</div>
+                </div><br>
+            </div><br>
+            <div style="padding-left: 600px;">
+                <button (click)="onUpload()"  
+                class="btn btn-success">
+                Add FAQ
+            </button>
+          </div>
+          <div style="padding-top: 20px;padding-left: 600px;">
+            <button class="btn" routerLink="/adminhome" routerLinkActive="active">Go to Home Page</button>
+        </div>
+        </form>
+    
+    </div>
+    
+    
+    </div>

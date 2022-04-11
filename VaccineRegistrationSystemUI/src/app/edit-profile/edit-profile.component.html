@@ -1,0 +1,74 @@
+<div><br>
+    <h3 style="color:whitesmoke;text-align:center;font-size: 25px;padding-right: 40px;">View / Edit Profile!!</h3>
+<form [formGroup]="editProfileForm" (ngSubmit)="onFormSubmit()">
+    <div style="text-align: center;">
+    <mat-form-field class="books" appearance="outline">
+      <mat-label style="color: white;">User ID</mat-label>
+      <input matInput disabled type="text" formControlName="userid">
+    </mat-form-field>
+
+    <mat-form-field class="books" appearance="outline">
+        <mat-label style="color: white;">Username</mat-label>
+        <input matInput type="text" formControlName="username" disabled>
+    </mat-form-field>
+
+    <mat-form-field (change)="capturechange();" class="books" appearance="outline">
+    <mat-label style="color: white;">Password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+    <button style="background-color: #008CBA;color: white;border: none;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <button style="background-color: #008CBA;color: white;border: none;" matSuffix mat-icon-button aria-label="Clear" (click)="fval.password.setValue('');">
+        <mat-icon>close</mat-icon>
+    </button>
+    </mat-form-field>
+        
+    <mat-form-field (change)="capturechange();" class="books" appearance="outline">
+        <mat-label style="color: white;">Name</mat-label>
+        <input matInput type="text" formControlName="name">
+        <button style="background-color: #008CBA;color: white;border: none;" matSuffix mat-icon-button aria-label="Clear" (click)="fval.name.setValue('');">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <mat-form-field (change)="capturechange();" class="books" appearance="outline">
+        <mat-label style="color: white;">Email</mat-label>
+        <input matInput type="text" formControlName="email">
+        <button style="background-color: #008CBA;color: white;border: none;" matSuffix mat-icon-button aria-label="Clear" (click)="fval.email.setValue('');">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <mat-form-field (change)="capturechange();" class="books" appearance="outline">
+        <mat-label style="color: white;">City</mat-label>
+        <input matInput type="text" formControlName="city">
+        <button style="background-color: #008CBA;color: white;border: none;" matSuffix mat-icon-button aria-label="Clear" (click)="fval.city.setValue('');">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <mat-form-field (change)="capturechange();" class="books" appearance="outline">
+        <mat-label style="color: white;">Zipcode</mat-label>
+        <input matInput type="text" formControlName="zipcode">
+        <button style="background-color: #008CBA;color: white;border: none;" matSuffix mat-icon-button aria-label="Clear" (click)="fval.zipcode.setValue('');">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <mat-form-field (change)="capturechange();" class="books" appearance="outline">
+        <mat-label style="color: white;">Age</mat-label>
+        <input matInput type="text" formControlName="age">
+        <button style="background-color: #008CBA;color: white;border: none;" matSuffix mat-icon-button aria-label="Clear" (click)="fval.age.setValue('');">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+      </div>
+      <br>
+      <div style="text-align:center;padding-left: 100px;">
+        <button (click)="onUpload()" class="btn buttons">
+            Update Profile
+        </button>
+        <button routerLink="/userhome" style="margin: 5px;" class="btn buttons">Go to Home Page</button>
+    </div>
+</form>
+  </div>

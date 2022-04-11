@@ -1,0 +1,72 @@
+<div><br>
+  <h3 style="color:white;text-align:center;font-size: 25px;">User Registration</h3>
+  <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()" class="col-md-12" >
+    <div class="form-group" >
+      <label class="preview" for="userName">User Name: </label>
+      <input type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.userName.errors }" placeholder="Enter User Name here"/>
+          <div class="preview-req" *ngIf="submitted && fval.userName.errors" class="invalid-feedback">
+              <div class="preview-req" *ngIf="fval.userName.errors.required">User Name is required</div>
+          </div>
+    </div>
+  
+    <div class="form-group" >
+      <label class="preview" for="Name">Name: </label>
+      <input type="text" formControlName="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.Name.errors }" placeholder="Enter Name here"/>
+      <div class="preview-req" *ngIf="submitted && fval.Name.errors" class="invalid-feedback">
+          <div class="preview-req" *ngIf="fval.Name.errors.required">User Name is required</div>
+      </div>
+    </div>
+    <div class="form-group" >
+      <label class="preview" for="email">Email: </label>
+      <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.email.errors }" placeholder="Enter email here"/>
+      <div class="preview-req" *ngIf="submitted && fval.email.errors" class="invalid-feedback">
+          <div class="preview-req" *ngIf="fval.email.errors.required">Email is required</div>
+          <div class="preview-req" *ngIf="fval.email.errors.email">Enter valid email address</div>
+      </div>
+    </div>
+    <div class="form-group" >
+      <label class="preview" for="city">City: </label>
+      <input type="text" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.city.errors }" placeholder="Enter City here"/>
+      <div class="preview-req" *ngIf="submitted && fval.city.errors" class="invalid-feedback">
+          <div class="preview-req" *ngIf="fval.city.errors.required">City is required</div>
+      </div>
+    </div>
+  
+    <div class="form-group" >
+      <label class="preview" for="email">Password: </label>
+      <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.password.errors }" placeholder="Enter Password here"/>
+      <div class="preview-req" *ngIf="submitted && fval.password.errors" class="invalid-feedback">
+          <div class="preview-req" *ngIf="fval.password.errors.required">Password is required</div>
+          <div class="preview-req" *ngIf="fval.password.errors.minlength">Password must be at least 8 characters</div>
+      </div>
+      
+    </div>
+  
+    <div class="form-group" >
+      <label class="preview" for="email">Zipcode: </label>
+      <input type="text" formControlName="zipcode" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.zipcode.errors }" placeholder="Enter Zipcode here"/>
+      <div class="preview-req" *ngIf="submitted && fval.zipcode.errors" class="invalid-feedback">
+          <div class="preview-req" *ngIf="fval.zipcode.errors.required">Zipcode is required</div>
+      </div>
+      
+    </div>
+
+    <div class="form-group" >
+      <label class="preview" for="email">Age: </label>
+      <input type="text" formControlName="age" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.age.errors }" placeholder="Enter Age here"/>
+      <div class="preview-req" *ngIf="submitted && fval.age.errors" class="invalid-feedback">
+          <div class="preview-req" *ngIf="fval.age.errors.required">Age is required</div>
+      </div>
+      
+    </div>
+    
+
+    <div class="form-group" style="text-align:center;padding-left: 100px;">
+      <button [disabled]="loading" class="btn" style="margin: 5px;">
+          <span class="preview-req" *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Register
+      </button>
+      <button routerLink="/login" class="btn btn-link">Go to Login Page</button>
+  </div>
+  </form>
+</div>

@@ -1,0 +1,51 @@
+<div><br>
+<h3 style="color:whitesmoke;text-align:center;font-size: 25px;padding-right: 40px;">View Available Slots!!</h3>
+  <form [formGroup]="bookslotForm" (ngSubmit)="onFormSubmit()">
+    <div style="text-align: center;">
+      <mat-form-field appearance="outline" class="books">
+        <mat-label style="color: white;">Registration Date (Choose a date)</mat-label>
+        <input matInput [matDatepicker]="picker" [min]="minDate" formControlName="regDate" disabled>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker disabled="false" color="primary"></mat-datepicker>        
+      </mat-form-field><br><br>
+      <mat-form-field appearance="outline" class="books">
+        <mat-label style="color: white;">Registration Time (Select Time)</mat-label>
+        <mat-select formControlName="regTime">
+          <mat-option *ngFor="let time of registrationTime" [value]="time.value">
+            {{time.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br><br>
+      <mat-form-field appearance="outline" class="books">
+        <mat-label style="color: white;">Clinic Address (Choose a Clinic)</mat-label>
+        <mat-select formControlName="clinicAdd">
+          <mat-option *ngFor="let add of clinicAdd" [value]="add.value">
+            {{add.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br><br>
+      <mat-form-field appearance="outline" class="books">
+        <mat-label style="color: white;">Dose Number (Select Dose)</mat-label>
+        <mat-select formControlName="dosage">
+          <mat-option *ngFor="let dose of Dosage" [value]="dose.value">
+            {{dose.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br><br>
+      <mat-form-field appearance="outline" *ngIf="fval.dosage.value == 'dose2'" class="books">
+        <mat-label style="color: white;">First Dose Date (28 days before today)</mat-label>
+        <input matInput [matDatepicker]="picker"[max]="minFirstDate" formControlName="firstDate" style="color: white;" disabled>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker disabled="false" touchUi #picker color="primary"></mat-datepicker>
+      </mat-form-field>    
+    </div>
+
+  <br>
+  <div style="text-align:center;padding-left: 100px;">
+    <button (click)="onUpload()" class="btn">
+        Book Slot
+    </button>
+    <button routerLink="/userhome" class="btn btn-link">Go to Home Page</button>
+</div>
+</form>
+</div>
